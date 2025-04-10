@@ -8,4 +8,4 @@ const handleValidations = (req, res, next) => {
   next();
 };
 
-module.exports = { handleValidations };
+module.exports = handleValidations;
