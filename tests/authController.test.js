@@ -47,7 +47,7 @@ describe("authController", () => {
       await authController.login(req, res);
       
       expect(res.status).toHaveBeenCalledWith(200);
-      expect(res.json).toHaveBeenCalledWith({ message: "✅ Connexion réussie", data: mockUser });
+      expect(res.json).toHaveBeenCalledWith({ message: "Connexion réussie", data: mockUser });
     });
 
     it("should return status 401 if user not found", async () => {
@@ -56,7 +56,7 @@ describe("authController", () => {
       await authController.login(req, res);
       
       expect(res.status).toHaveBeenCalledWith(401);
-      expect(res.json).toHaveBeenCalledWith({ message: "❌ Nom d'utilisateur ou mot de passe incorrect" });
+      expect(res.json).toHaveBeenCalledWith({ message: "Nom d'utilisateur ou mot de passe incorrect" });
     });
 
     it("should return status 401 if password is incorrect", async () => {
@@ -69,7 +69,7 @@ describe("authController", () => {
       await authController.login(req, res);
       
       expect(res.status).toHaveBeenCalledWith(401);
-      expect(res.json).toHaveBeenCalledWith({ message: "❌ Nom d'utilisateur ou mot de passe incorrect" });
+      expect(res.json).toHaveBeenCalledWith({ message: "Nom d'utilisateur ou mot de passe incorrect" });
     });
 
     it("should return status 500 if an error occurs", async () => {
@@ -78,7 +78,7 @@ describe("authController", () => {
       await authController.login(req, res);
       
       expect(res.status).toHaveBeenCalledWith(500);
-      expect(res.json).toHaveBeenCalledWith({ message: "💥 Problème interne au serveur, réessayez plus tard.", error: "Database error" });
+      expect(res.json).toHaveBeenCalledWith({ message: "Problème interne au serveur, réessayez plus tard.", error: "Database error" });
     });
   });
 

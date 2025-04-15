@@ -3,7 +3,7 @@ const { validationResult } = require("express-validator");
 const handleValidations = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ message: "🚫 Données invalides", errors: errors.array() });
+    return res.status(400).json({ message: "Données invalides", errors: errors.array() });
   }
   next();
 };
